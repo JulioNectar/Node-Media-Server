@@ -1,9 +1,9 @@
 ### get all relay tasks
-GET http://127.0.0.1:8000/api/relay HTTP/1.1
+GET http://127.0.0.1:8001/api/relay HTTP/1.1
 Authorization: Basic admin:admin
 
 ### create relay pull task
-POST http://127.0.0.1:8000/api/relay/pull HTTP/1.1
+POST http://127.0.0.1:8001/api/relay/pull HTTP/1.1
 Authorization: Basic admin:admin 
 Content-Type: application/x-www-form-urlencoded
 
@@ -12,7 +12,7 @@ app=live
 &url=rtmp://192.168.0.2/live/bbb
 
 ### create relay push task
-POST http://127.0.0.1:8000/api/relay/push HTTP/1.1
+POST http://127.0.0.1:8001/api/relay/push HTTP/1.1
 Authorization: Basic admin:admin 
 Content-Type: application/x-www-form-urlencoded
 
@@ -22,7 +22,7 @@ app=live
 
 
 ### create relay task
-POST http://127.0.0.1:8000/api/relay/task HTTP/1.1
+POST http://127.0.0.1:8001/api/relay/task HTTP/1.1
 Authorization: Basic admin:admin 
 Content-Type: application/x-www-form-urlencoded
 
@@ -30,5 +30,5 @@ path=rtmp://192.168.0.2/live/bbb
 &url=rtmp://127.0.0.1/live/bbb
 
 ### delete relay task
-DELETE http://127.0.0.1:8000/api/relay/N3MKMPHU HTTP/1.1
+DELETE http://127.0.0.1:8001/api/relay/N3MKMPHU HTTP/1.1
 Authorization: Basic admin:admin 

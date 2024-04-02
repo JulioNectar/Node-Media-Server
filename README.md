@@ -14,7 +14,7 @@ A Node.js implementation of RTMP/HTTP-FLV/WS-FLV/HLS/DASH Media Server
 [https://github.com/illuspas/Node-Media-Server-Admin](https://github.com/illuspas/Node-Media-Server-Admin)
 
 # Web Admin Panel Screenshot
-[http://server_ip:8000/admin](http://server_ip:8000/admin)
+[http://server_ip:8001/admin](http://server_ip:8001/admin)
 
 ![admin](https://raw.githubusercontent.com/illuspas/resources/master/img/admin_panel_dashboard.png)
 ![preview](https://raw.githubusercontent.com/illuspas/resources/master/img/admin_panel_streams_preview.png)
@@ -50,7 +50,7 @@ node-media-server
 
 ## docker version
 ```bash
-docker run --name nms -d -p 1935:1935 -p 8000:8000 -p 8443:8443 illuspas/node-media-server
+docker run --name nms -d -p 1935:1935 -p 8001:8001 -p 8443:8443 illuspas/node-media-server
 ```
 
 ## npm version (recommended)
@@ -74,7 +74,7 @@ const config = {
     ping_timeout: 60
   },
   http: {
-    port: 8000,
+    port: 8001,
     allow_origin: '*'
   }
 };
@@ -116,22 +116,22 @@ rtmp://localhost/live/STREAM_NAME
 
 ## http-flv
 ```
-http://localhost:8000/live/STREAM_NAME.flv
+http://localhost:8001/live/STREAM_NAME.flv
 ```
 
 ## websocket-flv
 ```
-ws://localhost:8000/live/STREAM_NAME.flv
+ws://localhost:8001/live/STREAM_NAME.flv
 ```
 
 ## HLS
 ```
-http://localhost:8000/live/STREAM_NAME/index.m3u8
+http://localhost:8001/live/STREAM_NAME/index.m3u8
 ```
 
 ## DASH
 ```
-http://localhost:8000/live/STREAM_NAME/index.mpd
+http://localhost:8001/live/STREAM_NAME/index.mpd
 ```
 
 ## via flv.js over http-flv
@@ -144,7 +144,7 @@ http://localhost:8000/live/STREAM_NAME/index.mpd
         var videoElement = document.getElementById('videoElement');
         var flvPlayer = flvjs.createPlayer({
             type: 'flv',
-            url: 'http://localhost:8000/live/STREAM_NAME.flv'
+            url: 'http://localhost:8001/live/STREAM_NAME.flv'
         });
         flvPlayer.attachMediaElement(videoElement);
         flvPlayer.load();
@@ -163,7 +163,7 @@ http://localhost:8000/live/STREAM_NAME/index.mpd
         var videoElement = document.getElementById('videoElement');
         var flvPlayer = flvjs.createPlayer({
             type: 'flv',
-            url: 'ws://localhost:8000/live/STREAM_NAME.flv'
+            url: 'ws://localhost:8001/live/STREAM_NAME.flv'
         });
         flvPlayer.attachMediaElement(videoElement);
         flvPlayer.load();
@@ -204,7 +204,7 @@ const config = {
     ping_timeout: 60
   },
   http: {
-    port: 8000,
+    port: 8001,
     allow_origin: '*'
   }
 };
@@ -234,7 +234,7 @@ const config = {
     ping_timeout: 60
   },
   http: {
-    port: 8000,
+    port: 8001,
     allow_origin: '*'
   },
   auth: {
@@ -347,7 +347,7 @@ const config = {
     ping_timeout: 60
   },
   http: {
-    port: 8000,
+    port: 8001,
     allow_origin: '*'
   },
   https: {
@@ -386,7 +386,7 @@ const config = {
 >The default is not turned on
 
 ## Server stats
-http://localhost:8000/api/server
+http://localhost:8001/api/server
 
 ```json
 {
@@ -431,7 +431,7 @@ http://localhost:8000/api/server
 ```
 
 ## Streams stats
-http://localhost:8000/api/streams
+http://localhost:8001/api/streams
 
 ```json
 {
@@ -520,7 +520,7 @@ const config = {
     ping_timeout: 60
   },
   http: {
-    port: 8000,
+    port: 8001,
     mediaroot: './media',
     allow_origin: '*'
   },
@@ -557,7 +557,7 @@ const config = {
     ping_timeout: 60
   },
   http: {
-    port: 8000,
+    port: 8001,
     mediaroot: './media',
     allow_origin: '*'
   },
@@ -600,7 +600,7 @@ const config = {
     ping_timeout: 60
   },
   http: {
-    port: 8000,
+    port: 8001,
     mediaroot: './media',
     allow_origin: '*'
   },

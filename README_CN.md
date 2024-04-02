@@ -40,7 +40,7 @@ node-media-server
 
 ## docker 运行
 ```bash
-docker run --name nms -d -p 1935:1935 -p 8000:8000 -p 8443:8443 illuspas/node-media-server
+docker run --name nms -d -p 1935:1935 -p 8001:8001 -p 8443:8443 illuspas/node-media-server
 ```
 
 ## npm 定制开发(推荐)
@@ -63,7 +63,7 @@ const config = {
     ping_timeout: 60
   },
   http: {
-    port: 8000,
+    port: 8001,
     allow_origin: '*'
   }
 };
@@ -106,7 +106,7 @@ ffplay rtmp://localhost/live/STREAM_NAME
 
 ## http-flv 流格式
 ```bash
-ffplay http://localhost:8000/live/STREAM_NAME.flv
+ffplay http://localhost:8001/live/STREAM_NAME.flv
 ```
 
 ## 使用 flv.js 播放 http-flv 流格式
@@ -119,7 +119,7 @@ ffplay http://localhost:8000/live/STREAM_NAME.flv
         var videoElement = document.getElementById('videoElement');
         var flvPlayer = flvjs.createPlayer({
             type: 'flv',
-            url: 'http://localhost:8000/live/STREAM_NAME.flv'
+            url: 'http://localhost:8001/live/STREAM_NAME.flv'
         });
         flvPlayer.attachMediaElement(videoElement);
         flvPlayer.load();
@@ -138,7 +138,7 @@ ffplay http://localhost:8000/live/STREAM_NAME.flv
         var videoElement = document.getElementById('videoElement');
         var flvPlayer = flvjs.createPlayer({
             type: 'flv',
-            url: 'ws://localhost:8000/live/STREAM_NAME.flv'
+            url: 'ws://localhost:8001/live/STREAM_NAME.flv'
         });
         flvPlayer.attachMediaElement(videoElement);
         flvPlayer.load();
@@ -167,7 +167,7 @@ const config = {
     ping_timeout: 60
   },
   http: {
-    port: 8000,
+    port: 8001,
     allow_origin: '*'
   },
   auth: {
@@ -263,7 +263,7 @@ const config = {
     ping_timeout: 60
   },
   http: {
-    port: 8000,
+    port: 8001,
     allow_origin: '*'
   },
   https: {
@@ -301,7 +301,7 @@ const config = {
 >基于Basic auth提供验证，请注意修改密码，默认并未开启。
 
 ## 服务器信息统计
-http://localhost:8000/api/server
+http://localhost:8001/api/server
 
 ```json
 {
@@ -346,7 +346,7 @@ http://localhost:8000/api/server
 ```
 
 ## 流信息统计
-http://localhost:8000/api/streams
+http://localhost:8001/api/streams
 
 ```json
 {
@@ -437,7 +437,7 @@ const config = {
     ping_timeout: 60
   },
   http: {
-    port: 8000,
+    port: 8001,
     mediaroot: './media',
     allow_origin: '*'
   },
@@ -475,7 +475,7 @@ const config = {
     ping_timeout: 60
   },
   http: {
-    port: 8000,
+    port: 8001,
     mediaroot: './media',
     allow_origin: '*'
   },

@@ -6,7 +6,7 @@ const config = {
     port: 1935,
   },
   http: {
-    port: 8000,
+    port: 8001,
   },
 };
 
